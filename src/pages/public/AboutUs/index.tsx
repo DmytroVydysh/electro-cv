@@ -1,5 +1,5 @@
 import React from 'react';
-export const Slash: React.FC = () => {
+export const AboutUs: React.FC = () => {
  
   return <>
 
