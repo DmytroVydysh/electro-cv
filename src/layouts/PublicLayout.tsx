@@ -67,11 +67,11 @@ export const PublicLayout: React.FC<PublicLayoutProps> = ({ children }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </button>
-            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-primary rounded-box w-52 mt-3">
-              <li><a href="/" className="text-primary-900 hover:text-accent">{t('header_home')}</a></li>
-              <li><a href="/about-us" className="text-primary-900 hover:text-accent">{t('header_about')}</a></li>
-              <li><a href="/services" className="text-primary-900 hover:text-accent">{t('header_services')}</a></li>
-              <li><a href="/contact" className="text-primary-900 hover:text-accent">{t('header_contacts')}</a></li>
+            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-primary rounded-box w-52 mt-3 absolute left-0">
+              <li><a href="/" className={`${currentPageName === '/' ? classNameActivePage : ''} ${classNameHoverPage} text-primary-900 hover:text-accent`}>{t('header_home')}</a></li>
+              <li><a href="/about-us" className={`${currentPageName === '/about-us' ? classNameActivePage : ''} ${classNameHoverPage} text-primary-900 hover:text-accent`}>{t('header_about')}</a></li>
+              <li><a href="/services" className={`${currentPageName === '/services' ? classNameActivePage : ''} ${classNameHoverPage} text-primary-900 hover:text-accent`}>{t('header_services')}</a></li>
+              <li><a href="/contacts" className={`${currentPageName === '/contacts' ? classNameActivePage : ''} ${classNameHoverPage} text-primary-900 hover:text-accent`}>{t('header_contacts')}</a></li>
             </ul>
           </div>
 
@@ -80,7 +80,7 @@ export const PublicLayout: React.FC<PublicLayoutProps> = ({ children }) => {
             <a href="/" className={`${currentPageName === '/' ? classNameActivePage : ''}                 ${classNameHoverPage} px-3 hover:text-accent transition-colors duration-200 h-full inline-flex justify-center items-center`}>{t('header_home')}</a>
             <a href="/about-us" className={`${currentPageName === '/about-us' ? classNameActivePage : ''} ${classNameHoverPage} px-3 hover:text-accent transition-colors duration-200 h-full inline-flex justify-center items-center`}>{t('header_about')}</a>
             <a href="/services" className={`${currentPageName === '/services' ? classNameActivePage : ''} ${classNameHoverPage} px-3 hover:text-accent transition-colors duration-200 h-full inline-flex justify-center items-center`}>{t('header_services')}</a>
-            <a href="/contact" className={`${currentPageName === '/contact' ? classNameActivePage : ''}   ${classNameHoverPage} px-3 hover:text-accent transition-colors duration-200 h-full inline-flex justify-center items-center`}>{t('header_contacts')}</a>
+            <a href="/contacts" className={`${currentPageName === '/contacts' ? classNameActivePage : ''}   ${classNameHoverPage} px-3 hover:text-accent transition-colors duration-200 h-full inline-flex justify-center items-center`}>{t('header_contacts')}</a>
           </nav>
 
           {/* Pulsante Azione */}
@@ -98,7 +98,7 @@ export const PublicLayout: React.FC<PublicLayoutProps> = ({ children }) => {
 
             <div className="inline-flex items-center">
 
-              <div className="dropdown">
+              <div className="dropdown h-full inline-flex items-center">
                 <button tabIndex={0} role="button" className="btn lg:btn-md btn-sm rounded-r-none"><img src={`/images/flags/${language}.svg`} alt="" /></button>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow absolute right-0">
                   <li><a href="/" onClick={(event: React.MouseEvent<HTMLAnchorElement> | React.TouchEvent<HTMLAnchorElement>) => { event.preventDefault(); _changeLanguage('en'); }}><img src={`/images/flags/en.svg`} alt="" />English</a></li>
@@ -107,7 +107,7 @@ export const PublicLayout: React.FC<PublicLayoutProps> = ({ children }) => {
                 </ul>
               </div>
 
-              <div className="dropdown">
+              <div className="dropdown h-full inline-flex items-centers">
                 <button tabIndex={0} role="button" className="btn lg:btn-md btn-sm rounded-l-none"><SignIn size={24} /></button>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow absolute right-0">
                   <li><a href="/sign-in"><UserCircleCheck size={24} />{t('header_signin')}</a></li>

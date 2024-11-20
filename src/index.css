@@ -7,6 +7,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -15,15 +16,19 @@ html {
   overflow-x: hidden;
   min-height: 100vh;
 }
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body {
   margin: 0;
   line-height: inherit;
 }
-html, :host {
+
+html,
+:host {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
@@ -34,6 +39,7 @@ html, :host {
   font-variation-settings: normal;
   -webkit-tap-highlight-color: transparent;
 }
+
 .no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -41,4 +47,18 @@ html, :host {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.text-shadow-white {
+  --text-shadow-color: 255, 255, 255;
+}
+
+.text-shadow-sm {
+  --text-shadow-color: 0, 0, 0;
+  text-shadow: 0 1px 2px rgba(var(--text-shadow-color), 0.05);
+}
+
+.text-black-shadow {
+  --text-shadow-color: 0, 0, 0;
+  text-shadow: 0 2px 0 rgba(var(--text-shadow-color), 0.05);
 }
