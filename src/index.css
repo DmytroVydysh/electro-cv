@@ -1,3 +1,4 @@
+@plugin "daisyui";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,6 +60,25 @@ html,
 }
 
 .text-black-shadow {
-  --text-shadow-color: 0, 0, 0;
-  text-shadow: 0 2px 0 rgba(var(--text-shadow-color), 0.05);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.slash-content-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+[data-theme=dark] .slash-content-background {
+  background-image: url(../public/images/backgrounds/bg5.png);
+}
+
+[data-theme=light] .slash-content-background {
+  background-image: url(../public/images/backgrounds/bg6.png);
 }
