@@ -3,5 +3,7 @@
   "header_home": "Home",
   "header_about": "About us",
   "header_services": "Services",
-  "header_contacts": "Contacts"
+  "header_contacts": "Contacts",
+  "header_signin": "Sign in",
+  "header_signup": "Sign up"
 }
